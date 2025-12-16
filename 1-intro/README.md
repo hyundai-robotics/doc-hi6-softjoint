@@ -1,8 +1,8 @@
-﻿# 🧩 1. 개요
+﻿# 🧩 1. Overview
 
-**softjoint 기능**은 사용자가 설정한 환경을 기준으로, 로봇이 외력에 대해 **축 좌표계 기준으로 유연하게 반응**하도록 하는 기능입니다.  
-기능을 정확하게 사용하기 위해서는 로봇에 장착된 **툴(Tool)** 또는 **부가 중량(Payload)** 정보를 정확히 설정해야 합니다.  
+The Soft Joint function allows the robot to respond flexibly to external forces in the joint coordinate frame, based on the environment configured by the user.
+To ensure accurate operation of this function, information regarding the tool mounted on the robot or any additional payload must be configured correctly.
 
-본 기능은 **소프트웨어 기반**으로 동작하므로, **힘/토크 센서 등 별도의 추가 하드웨어 없이** 사용할 수 있습니다.
+Since this function operates entirely through software, it can be used without any additional hardware, such as force/torque sensors.
 
 ---

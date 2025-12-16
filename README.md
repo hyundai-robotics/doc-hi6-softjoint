@@ -1,13 +1,11 @@
-﻿# Hi6 로봇제어기 기능설명서 - softjoint 기능
+﻿# Hi6 Robot Controller Function Description – SoftJoint Function
 
+The information provided in this product manual is the property of **HD Hyundai Robotics**.
 
-본 제품 설명서에서 제공되는 정보는 현대로보틱스의 자산입니다.
+Without prior written consent from HD Hyundai Robotics, this document, in whole or in part,  
+may not be reproduced, redistributed, provided to any third party, or used for any other purpose.
 
-현대로보틱스의 서면에 의한 동의 없이 전부 또는 일부를 무단 전재 및 재배포할 수 없으며, 제3자에게 제공되거나 다른 목적에 사용할 수 없습니다.
-
-
-
-본 설명서는 사전 예고 없이 변경될 수 있습니다.
+The contents of this manual are subject to change without prior notice.
 
 <br>
 <br>

@@ -1,50 +1,46 @@
-﻿# Hi6 로봇제어기 기능설명서 - softjoint 기능
+﻿# Hi6 Robot Controller Function Description – SoftJoint Function
 
+The information provided in this product manual is the property of **HD Hyundai Robotics**.
 
-본 제품 설명서에서 제공되는 정보는 현대로보틱스의 자산입니다.
+Without prior written consent from HD Hyundai Robotics, this document, in whole or in part,  
+may not be reproduced, redistributed, provided to any third party, or used for any other purpose.
 
-현대로보틱스의 서면에 의한 동의 없이 전부 또는 일부를 무단 전재 및 재배포할 수 없으며, 제3자에게 제공되거나 다른 목적에 사용할 수 없습니다.
-
-
-
-본 설명서는 사전 예고 없이 변경될 수 있습니다.
+The contents of this manual are subject to change without prior notice.
 
 <br>
 <br>
 <br>
 <br>
 
-**Copyright ⓒ 2025 by HD Hyundai Robotics**
-# 🧩 1. 개요
+**Copyright ⓒ 2025 by HD Hyundai Robotics**# 🧩 1. Overview
 
-**softjoint 기능**은 사용자가 설정한 환경을 기준으로, 로봇이 외력에 대해 **축 좌표계 기준으로 유연하게 반응**하도록 하는 기능입니다.  
-기능을 정확하게 사용하기 위해서는 로봇에 장착된 **툴(Tool)** 또는 **부가 중량(Payload)** 정보를 정확히 설정해야 합니다.  
+The Soft Joint function allows the robot to respond flexibly to external forces in the joint coordinate frame, based on the environment configured by the user.
+To ensure accurate operation of this function, information regarding the tool mounted on the robot or any additional payload must be configured correctly.
 
-본 기능은 **소프트웨어 기반**으로 동작하므로, **힘/토크 센서 등 별도의 추가 하드웨어 없이** 사용할 수 있습니다.
+Since this function operates entirely through software, it can be used without any additional hardware, such as force/torque sensors.
 
 ---
-# 🧩 2. 명령어
+# 🧩 2. Commands
 
-SoftJoint 기능은 두 개의 명령어(`softjoint_lim`, `softjoint`)를 통해 설정 및 제어됩니다.  
+The SoftJoint function is configured and controlled using two commands:  
+`softjoint_lim` and `softjoint`.
 
-- `softjoint_lim` 명령어는 SoftJoint 동작에 필요한 **기본 파라미터를 사전에 정의**하는 역할을 합니다.
-- `softjoint` 명령어는, `softjoint_lim`에서 설정된 파라미터를 기준으로 **SoftJoint 기능을 활성화 또는 비활성화**합니다.
+- The `softjoint_lim` command is used to **predefine the base parameters** required for SoftJoint operation.
+- The `softjoint` command **enables or disables** the SoftJoint function based on the parameters configured by `softjoint_lim`.
 
-따라서 SoftJoint 기능을 사용하기 위해서는,  
-반드시 `softjoint_lim` 명령어를 먼저 사용하여 적용할 축과 동작 특성을 설정한 후  
-`softjoint on` 명령어를 통해 기능을 활성화해야 합니다.
+Therefore, to use the SoftJoint function, the user must first configure the target joint and its motion characteristics using the `softjoint_lim` command, and then enable the function by executing the `softjoint on` command.
 
-`softjoint_lim` 명령어를 통해 사용자는 다음과 같은 항목을 정의할 수 있습니다.
-- softjoint가 적용될 축 번호
-- 외력에 대한 반응의 부드러움 정도
-- 축의 허용 각도 범위
-- 외력 감지를 위한 문턱값## 🧩 2.1 softjoint
+Using the `softjoint_lim` command, the user can define the following items:
+- Joint index to which SoftJoint will be applied
+- Level of compliant response to external forces
+- Allowable joint angle range
+- Threshold value for external force detection## 🧩 2.1 softjoint
 
-SoftJoint 기능은 **센서를 사용하지 않고**, 외력에 대해 **축 좌표 기준으로 로봇이 밀리듯 반응하도록 하는 기능**입니다.
+The SoftJoint function allows the robot to respond compliantly to external forces in the joint coordinate frame without the use of sensors.
 
 <br>
 
-### 문법
+### Syntax
 
 ```plaintext
 softjoint on
@@ -53,115 +49,115 @@ softjoint off
 
 ---
 
-### 파라미터
+### Parameters
 
-| 항목 | 설명 |
+| Parameter | Description |
 |-----|------|
-| on  | softjoint 기능 시작 |
-| off | softjoint 기능 종료 |
+| on  | Enables the SoftJoint function |
+| off | Disables the SoftJoint function |
 
 ---
 <br>
 
-> ✅ **정보**  
-> `softjoint on` 기능을 사용하기 전에 반드시 `softjoint_lim` 명령어를 사용하여  
-> 다음 항목을 사전에 설정해야 합니다.
+> ✅ **Information**  
+> Before using the `softjoint on` command, you must configure the following parameters in advance using the `softjoint_lim` command:
 >
-> - 유연하게 동작할 축 번호 (`j`)
-> - 유연함 정도 (`sft`)
-> - 제한 각도 (`ang`)
-> - 문턱값 (`thr`)
+> - Joint index to be compliant (`j`)
+> - Compliance level (`sft`)
+> - Limit angle (`ang`)
+> - Threshold value (`thr`)
 >
-> 외력에 대한 로봇의 민감도를 향상시키기 위해,  
-> `softjoint on` 명령어 실행 전에 `delay` 명령어를 사용하여  
-> 로봇을 약 **1~2초간 정지**시키는 것을 권장합니다.
+> To improve the robot’s sensitivity to external forces,  
+> it is recommended to stop the robot for approximately **1–2 seconds**  
+> using the `delay` command before executing the `softjoint on` command.
 
 <br>
 
-> ⚠️ 부가축은 해당 기능을 사용할 수 없습니다.  ## 🧩 2.2 softjoint_lim 
+> ⚠️ **Warning**  
+> This function is **not supported for auxiliary axes**. ## 🧩 2.2 softjoint_lim 
 
-`softjoint_lim` 명령어는 `softjoint on` 기능을 사용하기 전에  
-SoftJoint 동작에 필요한 **파라미터 값을 사전에 설정**하기 위한 명령어입니다.
+The `softjoint_lim` command is used to **preconfigure the required parameters** for SoftJoint operation before enabling the `softjoint on` function.  
+Using this command, the user must set the following items in advance:
 
-사용자는 본 명령어를 통해 다음 항목을 설정해야 합니다.
-- SoftJoint 적용될 축 번호
-- 축의 유연함 정도
-- 허용 각도 범위
-- 외력 감지를 위한 문턱값
+- Joint index to which SoftJoint will be applied
+- Compliance level of the joint
+- Allowable joint angle range
+- Threshold value for external force detection
 
 <br>
 
-### 문법
+### Syntax
 
 ```plaintext
-softjoint_lim, j=<축번호>, sft=<부드러움 정도>, ang=<각도 범위>, thr=<문턱값>
+softjoint_lim, j=<joint>, sft=<softness>, ang=<angle>, thr=<threshold>
 ```
 
 ---
 
-### 파라미터
+### Parameters
 
-| 변수 | 설명 | 범위 / 단위 |
-|---------|------|-------------|
-| j   | softjoint 기능이 적용될 축 번호 | 로봇 축만 가능 |
-| sft | 축의 유연함 정도 (값이 클수록 더 유연하게 동작) | 0: Off, 1 ~ 100 |
-| ang | 축의 각도 제한 범위 | degree (deg) |
-| thr | 외력 감지를 위한 문턱값 | Nm |
+| Parameter | Description | Range / Unit |
+|-----------|-------------|--------------|
+| `j`   | Joint index to which the SoftJoint function is applied | Robot joints only |
+| `sft` | Joint compliance level (higher values result in more compliant behavior) | 0: Off, 1–100 |
+| `ang` | Allowable joint angle range | Degrees (deg) |
+| `thr` | Threshold value for external force detection | Nm |
 ---
 <br>
 
-> ✅ **정보**  
-> `softjoint_lim` 파라미터는 축 번호(`j`)와 부드러움 정도(`sft`)를 필수로 설정해야 합니다.  
-> 각도 범위(`ang`)와 문턱값(`thr`)을 설정하지 않을 경우, 각도 제한은 적용되지 않으며  
-> 문턱값은 **0.0 Nm**로 자동 설정됩니다.
+> ✅ **Information**  
+> For the `softjoint_lim` command, the joint index (`j`) and the compliance level (`sft`) **must be specified**.  
+> If the angle range (`ang`) and threshold value (`thr`) are not provided,  
+> the angle limit will not be applied and the threshold value will be automatically set to **0.0 Nm**.
 
-> ⚠️ 부가축은 해당 기능을 사용할 수 없습니다.  # 🧩 3. 예시
+> ⚠️ **Warning**  
+> This function is **not supported for auxiliary axes**.## 🧩 3. Examples
 
-본 절에서는 SoftJoint 기능의 실제 사용 방법을 이해할 수 있도록  
-`softjoint_lim` 및 `softjoint` 명령어를 활용한 **대표적인 설정 및 프로그램 예제**를 제공합니다.
+This section provides **representative configuration and program examples** using the  
+`softjoint_lim` and `softjoint` commands to help users understand how to use the SoftJoint function in practice.
 
-각 예제는 적용 축, 유연함 정도, 각도 제한, 문턱값 등 주요 파라미터 설정에 따른  
-SoftJoint 동작 특성을 확인하는 것을 목적으로 하며,  
-실제 작업 환경에서의 응용을 고려하여 구성되었습니다.
+Each example is designed to demonstrate the SoftJoint behavior under different parameter settings,  
+including the target joint, compliance level, angle limit, and threshold value.  
+The examples are structured with consideration for **practical application in real working environments**.
 
-예제를 통해 다음 사항을 확인할 수 있습니다.
-- 단일 축에 SoftJoint를 적용하는 방법
-- 복수 축에 서로 다른 파라미터를 적용하는 방법
-- SoftJoint 활성화/비활성화 시의 프로그램 흐름
-- `delay` 명령어를 포함한 권장 사용 절차## 🧩 3.1 예제: 3번 축 방향 파라미터 설정 
+Through these examples, users can learn the following:
+- How to apply SoftJoint to a single joint
+- How to apply different parameters to multiple joints
+- Program flow when enabling and disabling the SoftJoint function
+- The recommended usage procedure, including the `delay` command
+## 🧩 3.1 Example: Parameter Configuration for Joint 3
 
-3번 축을 활성화하고,  부드러움은 50, 각도 제한은 -30° ~ +30°, 문턱값은 10 Nm로 설정하는 예제입니다.
-
-- 활성 축 : 3번 축
-- 부드러움(`sft`) : 50
-- 각도 제한(`ang`) : ±30 deg
-- 문턱값(`thr`) : 10 Nm
+This example shows how to enable SoftJoint for **Joint 3** with the following settings:
+- **Active joint**: Joint 3
+- **Compliance (`sft`)**: 50
+- **Angle limit (`ang`)**: ±30 deg
+- **Threshold (`thr`)**: 10 Nm
 
 ```plaintext
-softjoint_lim, j=3, sft=50, ang=30, thr=10## 🧩 3.2 예제: 2번 및 3번 축 방향으로 밀릴 수 있도록 설정한 경우
+softjoint_lim, j=3, sft=50, ang=30, thr=10## 🧩 3.2 Example: Configuration Allowing Compliance on Joints 2 and 3
 
-2번 축과 3번 축에 서로 다른 SoftJoint 파라미터를 적용하여,  
-외력에 대해 두 축이 각각 다른 특성으로 반응하도록 설정한 예제입니다.
+This example demonstrates how to apply different SoftJoint parameters to **Joint 2** and **Joint 3**,  
+so that each joint responds to external forces with different characteristics.
 
-#### 설정 조건
+#### Configuration Conditions
 
-- **부드러움(`sft`)**
-  - 2번 축 : 30
-  - 3번 축 : 80
+- **Compliance (`sft`)**
+  - Joint 2: 30
+  - Joint 3: 80
 
-- **각도 제한(`ang`)**
-  - 2번 축 : -50° ~ +50°
-  - 3번 축 : 제한 없음
+- **Angle Limit (`ang`)**
+  - Joint 2: −50° to +50°
+  - Joint 3: No limit
 
-- **문턱값(`thr`)**
-  - 2번 축 : 3 Nm
-  - 3번 축 : 5 Nm
+- **Threshold (`thr`)**
+  - Joint 2: 3 Nm
+  - Joint 3: 5 Nm
 
-#### 프로그램 예제
+#### Program Example
 
 ```plaintext
 S1   move P, spd=100mm/sec, accu=0, tool=0
-     delay 2.0     # softjoint on 실행 전 delay 설정 필수
+     delay 2.0     # Delay required before executing softjoint on
      softjoint_lim j=2, sft=30, ang=50, thr=3
      softjoint_lim j=3, sft=80, thr=5
      softjoint on
