@@ -11,32 +11,32 @@
 	},
 	{
 		"link": "2-main/README.md",
-		"char_ofs": 504,
-		"byte_ofs": 1041
+		"char_ofs": 505,
+		"byte_ofs": 1043
 	},
 	{
 		"link": "2-main/2.1-softjoint.md",
-		"char_ofs": 998,
-		"byte_ofs": 1973
+		"char_ofs": 1015,
+		"byte_ofs": 1991
 	},
 	{
 		"link": "2-main/2.2-softjoint_lim.md",
-		"char_ofs": 1586,
-		"byte_ofs": 2988
+		"char_ofs": 1656,
+		"byte_ofs": 3093
 	},
 	{
 		"link": "3-example/README.md",
-		"char_ofs": 2345,
-		"byte_ofs": 4315
+		"char_ofs": 2421,
+		"byte_ofs": 4430
 	},
 	{
 		"link": "3-example/3.1-example.md",
-		"char_ofs": 2727,
-		"byte_ofs": 5111
+		"char_ofs": 2807,
+		"byte_ofs": 5230
 	},
 	{
 		"link": "3-example/3.2-example.md",
-		"char_ofs": 2963,
-		"byte_ofs": 5485
+		"char_ofs": 3249,
+		"byte_ofs": 6023
 	}
 ]

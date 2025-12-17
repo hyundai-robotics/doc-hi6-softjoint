@@ -12,6 +12,6 @@
 
 ## 3. 예시
 * [3. 명령어 예시](3-example/README.md)
-  * [3.1 예제 - 3번축 방향 설정](3-example/3.1-example.md)
-  * [3.2 예제 - 2/3번축 방향 설정](3-example/3.2-example.md)
+  * [3.1 예제 - 3번 축 SoftJoint 파라미터 설정](3-example/3.1-example.md)
+  * [3.2 예제 - 2번·3번 축 SoftJoint 차등 컴플라이언스 설정](3-example/3.2-example.md)
   
