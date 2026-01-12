@@ -1,4 +1,6 @@
-﻿# ${cont_model} 로봇제어기 기능설명서 - softjoint 기능
+﻿
+[__SOURCE](README.md)
+# ${cont_model} 로봇제어기 기능설명서 - softjoint 기능
 
 
 본 제품 설명서에서 제공되는 정보는 HD현대로보틱스의 자산입니다.
@@ -15,6 +17,8 @@ HD현대로보틱스의 서면에 의한 동의 없이 전부 또는 일부를 �
 <br>
 
 **Copyright ⓒ 2025 by HD Hyundai Robotics**
+
+[__SOURCE](1-intro/README.md)
 # 🧩 1. 개요
 
 **softjoint 기능**은 사용자가 설정한 환경을 기준으로, 로봇이 외력에 대해 **축 좌표계** 기준으로 유연하게 반응하도록 하는 기능입니다.  
@@ -24,6 +28,8 @@ HD현대로보틱스의 서면에 의한 동의 없이 전부 또는 일부를 �
 
 
 ---
+
+[__SOURCE](2-main/README.md)
 # 🧩 2. 명령어
 
 SoftJoint 기능은 두 개의 명령어(**softjoint_lim**, **softjoint**)를 통해 설정 및 제어됩니다.  
@@ -39,7 +45,9 @@ SoftJoint 기능은 두 개의 명령어(**softjoint_lim**, **softjoint**)를 �
 - softjoint가 적용될 축 번호
 - 외력에 대한 반응의 부드러움 정도
 - 축의 허용 각도 범위
-- 외력 감지를 위한 문턱값## 🧩 2.1 softjoint
+- 외력 감지를 위한 문턱값
+[__SOURCE](2-main/2.1-softjoint.md)
+## 🧩 2.1 softjoint
 
 **SoftJoint** 기능은 별도의 힘/토크 센서를 사용하지 않고,  
 외력이 인가될 경우 로봇이 **관절 축 좌표(Joint coordinate) 기준으로 순응(compliance) 동작을 수행하도록 제어하는 기능**입니다.
@@ -79,7 +87,9 @@ softjoint off
 
 <br>
 
-> ⚠️ 부가축은 해당 기능을 사용할 수 없습니다.  ## 🧩 2.2 softjoint_lim 
+> ⚠️ 부가축은 해당 기능을 사용할 수 없습니다.  
+[__SOURCE](2-main/2.2-softjoint_lim.md)
+## 🧩 2.2 softjoint_lim 
 
 **softjoint_lim** 명령어는 **softjoint on** 기능을 사용하기 전에  
 SoftJoint 동작에 필요한 **파라미터 값을 사전에 설정**하기 위한 명령어입니다.
@@ -116,7 +126,9 @@ softjoint_lim, j=<축번호>, sft=<부드러움 정도>, ang=<각도 범위>, th
 > 각도 범위(`ang`)와 문턱값(`thr`)을 설정하지 않을 경우, 각도 제한은 적용되지 않으며  
 > 문턱값은 **0.0 Nm**로 자동 설정됩니다.
 
-> ⚠️ 부가축은 해당 기능을 사용할 수 없습니다.  # 🧩 3. 예시
+> ⚠️ 부가축은 해당 기능을 사용할 수 없습니다.  
+[__SOURCE](3-example/README.md)
+# 🧩 3. 예시
 
 본 절에서는 SoftJoint 기능의 실제 사용 방법을 이해할 수 있도록  
 **softjoint_lim** 및 **softjoint** 명령어를 활용한 **대표적인 설정 및 프로그램 예제**를 제공합니다.
@@ -129,7 +141,9 @@ SoftJoint 동작 특성을 확인하는 것을 목적으로 하며,
 - 단일 축에 SoftJoint를 적용하는 방법
 - 복수 축에 서로 다른 파라미터를 적용하는 방법
 - SoftJoint 활성화/비활성화 시의 프로그램 흐름
-- `delay` 명령어를 포함한 권장 사용 절차## 🧩 3.1 예제 - 3번 축 SoftJoint 파라미터 설정
+- `delay` 명령어를 포함한 권장 사용 절차
+[__SOURCE](3-example/3.1-example.md)
+## 🧩 3.1 예제 - 3번 축 SoftJoint 파라미터 설정
 
 본 예제는 **3번 관절 축만을 활성화하여**,  
 외력에 대해 해당 축이 **지정된 컴플라이언스 특성으로 반응하도록 설정한 기본 사례**입니다.
@@ -165,6 +179,8 @@ SoftJoint 동작 특성을 확인하는 것을 목적으로 하며,
 softjoint_lim j=3, sft=50, ang=30, thr=10
 ```
 
+
+[__SOURCE](3-example/3.2-example.md)
 ## 🧩 3.2 예제: 2번·3번 축 SoftJoint 차등 컴플라이언스 설정
 
 본 예제는 **2번 축과 3번 축에 서로 다른 SoftJoint 파라미터를 적용하여**,  
