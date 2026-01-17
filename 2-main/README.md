@@ -1,4 +1,4 @@
-﻿# 🧩 2. 명령어
+﻿# 2. 명령어
 
 SoftJoint 기능은 두 개의 명령어(**softjoint_lim**, **softjoint**)를 통해 설정 및 제어됩니다.  
 
