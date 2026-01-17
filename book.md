@@ -1,22 +1,9 @@
 ﻿
 [__SOURCE](README.md)
-# ${cont_model} Robot Controller Function Description – SoftJoint Function
+# ${cont_model} Controller Function Description - SoftJoint Function
 
-The information provided in this product manual is the property of **HD Hyundai Robotics**.
-
-Without prior written consent from HD Hyundai Robotics, this document, in whole or in part,  
-may not be reproduced, redistributed, provided to any third party, or used for any other purpose.
-
-The contents of this manual are subject to change without prior notice.
-
-<br>
-<br>
-<br>
-<br>
-
-**Copyright ⓒ 2025 by HD Hyundai Robotics**
 [__SOURCE](1-intro/README.md)
-# 🧩 1. Overview
+# 1. Overview
 
 The Soft Joint function allows the robot to respond flexibly to external forces in the joint coordinate frame, based on the environment configured by the user.
 To ensure accurate operation of this function, information regarding the tool mounted on the robot or any additional payload must be configured correctly.
@@ -26,7 +13,7 @@ Since this function operates entirely through software, it can be used without a
 ---
 
 [__SOURCE](2-main/README.md)
-# 🧩 2. Commands
+# 2. Commands
 
 The SoftJoint function is configured and controlled using two commands:  
 `softjoint_lim` and `softjoint`.
@@ -42,7 +29,7 @@ Using the `softjoint_lim` command, the user can define the following items:
 - Allowable joint angle range
 - Threshold value for external force detection
 [__SOURCE](2-main/2.1-softjoint.md)
-## 🧩 2.1 softjoint
+## 2.1 softjoint
 
 The SoftJoint function allows the robot to respond compliantly to external forces in the joint coordinate frame without the use of sensors.
 
@@ -75,8 +62,8 @@ softjoint off
 > - Limit angle (`ang`)
 > - Threshold value (`thr`)
 >
-> To improve the robot’s sensitivity to external forces,  
-> it is recommended to stop the robot for approximately **1–2 seconds**  
+> To improve the robot's sensitivity to external forces,  
+> it is recommended to stop the robot for approximately **1-2 seconds**  
 > using the `delay` command before executing the `softjoint on` command.
 
 <br>
@@ -84,7 +71,7 @@ softjoint off
 > ⚠️ **Warning**  
 > This function is **not supported for auxiliary axes**. 
 [__SOURCE](2-main/2.2-softjoint_lim.md)
-## 🧩 2.2 softjoint_lim 
+## 2.2 softjoint_lim 
 
 The `softjoint_lim` command is used to **preconfigure the required parameters** for SoftJoint operation before enabling the `softjoint on` function.  
 Using this command, the user must set the following items in advance:
@@ -109,7 +96,7 @@ softjoint_lim, j=<joint>, sft=<softness>, ang=<angle>, thr=<threshold>
 | Parameter | Description | Range / Unit |
 |-----------|-------------|--------------|
 | `j`   | Joint index to which the SoftJoint function is applied | Robot joints only |
-| `sft` | Joint compliance level (higher values result in more compliant behavior) | 0: Off, 1–100 |
+| `sft` | Joint compliance level (higher values result in more compliant behavior) | 0: Off, 1-100 |
 | `ang` | Allowable joint angle range | Degrees (deg) |
 | `thr` | Threshold value for external force detection | Nm |
 ---
@@ -123,7 +110,7 @@ softjoint_lim, j=<joint>, sft=<softness>, ang=<angle>, thr=<threshold>
 > ⚠️ **Warning**  
 > This function is **not supported for auxiliary axes**.
 [__SOURCE](3-example/README.md)
-## 🧩 3. Examples
+## 3. Examples
 
 This section provides **representative configuration and program examples** using the  
 `softjoint_lim` and `softjoint` commands to help users understand how to use the SoftJoint function in practice.
@@ -139,7 +126,7 @@ Through these examples, users can learn the following:
 - The recommended usage procedure, including the `delay` command
 
 [__SOURCE](3-example/3.1-example.md)
-## 🧩 3.1 Example: Parameter Configuration for Joint 3
+## 3.1 Example: Parameter Configuration for Joint 3
 
 This example shows how to enable SoftJoint for **Joint 3** with the following settings:
 - **Active joint**: Joint 3
@@ -150,7 +137,7 @@ This example shows how to enable SoftJoint for **Joint 3** with the following se
 ```plaintext
 softjoint_lim, j=3, sft=50, ang=30, thr=10
 [__SOURCE](3-example/3.2-example.md)
-## 🧩 3.2 Example: Configuration Allowing Compliance on Joints 2 and 3
+## 3.2 Example: Configuration Allowing Compliance on Joints 2 and 3
 
 This example demonstrates how to apply different SoftJoint parameters to **Joint 2** and **Joint 3**,  
 so that each joint responds to external forces with different characteristics.
@@ -162,7 +149,7 @@ so that each joint responds to external forces with different characteristics.
   - Joint 3: 80
 
 - **Angle Limit (`ang`)**
-  - Joint 2: −50° to +50°
+  - Joint 2: -50° to +50°
   - Joint 3: No limit
 
 - **Threshold (`thr`)**

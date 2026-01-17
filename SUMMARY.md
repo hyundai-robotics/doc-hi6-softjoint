@@ -1,6 +1,6 @@
 ﻿# Table of Contents
 
-* [${cont_model} Robot Controller Function Description – SoftJoint Function](README.md)
+* [${cont_model} Controller Function Description - SoftJoint Function](README.md)
 
 ## 1. Overview
 * [1. Overview](1-intro/README.md)
@@ -12,5 +12,5 @@
 
 ## 3. Examples
 * [3. Command Examples](3-example/README.md)
-  * [3.1 Example – Configuration for Joint 3](3-example/3.1-example.md)
-  * [3.2 Example – Configuration for Joints 2 and 3](3-example/3.2-example.md)
+  * [3.1 Example - Configuration for Joint 3](3-example/3.1-example.md)
+  * [3.2 Example - Configuration for Joints 2 and 3](3-example/3.2-example.md)

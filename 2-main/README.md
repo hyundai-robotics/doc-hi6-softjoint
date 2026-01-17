@@ -1,4 +1,4 @@
-﻿# 🧩 2. Commands
+﻿# 2. Commands
 
 The SoftJoint function is configured and controlled using two commands:  
 `softjoint_lim` and `softjoint`.
