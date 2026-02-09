@@ -110,7 +110,7 @@ softjoint_lim, j=<joint>, sft=<softness>, ang=<angle>, thr=<threshold>
 > ⚠️ **Warning**  
 > This function is **not supported for auxiliary axes**.
 [__SOURCE](3-example/README.md)
-## 3. Examples
+# 3. Examples
 
 This section provides **representative configuration and program examples** using the  
 `softjoint_lim` and `softjoint` commands to help users understand how to use the SoftJoint function in practice.

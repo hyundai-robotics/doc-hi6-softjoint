@@ -1,4 +1,4 @@
-﻿## 3. Examples
+﻿# 3. Examples
 
 This section provides **representative configuration and program examples** using the  
 `softjoint_lim` and `softjoint` commands to help users understand how to use the SoftJoint function in practice.
