@@ -17,16 +17,16 @@
 [__SOURCE](2-main/README.md)
 # 2. 명령어
 
-SoftJoint 기능은 두 개의 명령어(**softjoint_lim**, **softjoint**)를 통해 설정 및 제어됩니다.  
+SoftJoint 기능은 두 개의 명령어(**soft`softjoint_lim`ftjoint**)를 통해 설정 및 제어됩니다.  
 
-- **softjoint_lim** 명령어는 SoftJoint 동작에 필요한 **기본 파라미터를 사전에 정의**하는 역할을 합니다.
-- **softjoint** 명령어는, **softjoint_lim**에서 설정된 파라미터를 기준으로 **SoftJoint 기능을 활성화 또는 비활성화**합니다.
+- `softjoint_lim` 명령어는 SoftJoint 동작에 필요한 **기본 파라미터를 사전에 정의**하는 역할을 합니다.
+- `softjoint` 명령어는, **`softjoint_lim` 설정된 파라미터를 기준으로 **SoftJoint 기능을 활성화 또는 비활성화**합니다.
 
 따라서 SoftJoint 기능을 사용하기 위해서는,  
-반드시 **softjoint_lim** 명령어를 먼저 사용하여 적용할 축과 동작 특성을 설정한 후  
+반드시 **`softjoint_lim`령어를 먼저 사용하여 적용할 축과 동작 특성을 설정한 후  
 **softjoint on** 명령어를 통해 기능을 활성화해야 합니다.
 
-**softjoint_lim** 명령어를 통해 사용자는 다음과 같은 항목을 정의할 수 있습니다.
+`softjoint_lim` 명령어를 통해 사용자는 다음과 같은 항목을 정의할 수 있습니다.
 - softjoint가 적용될 축 번호
 - 외력에 대한 반응의 부드러움 정도
 - 축의 허용 각도 범위
@@ -34,7 +34,7 @@ SoftJoint 기능은 두 개의 명령어(**softjoint_lim**, **softjoint**)를 �
 [__SOURCE](2-main/2.1-softjoint.md)
 ## 2.1 softjoint
 
-**SoftJoint** 기능은 별도의 힘/토크 센서를 사용하지 않고,  
+`softjoint` 기능은 별도의 힘/토크 센서를 사용하지 않고,  
 외력이 인가될 경우 로봇이 **관절 축 좌표(Joint coordinate) 기준으로 순응(compliance) 동작을 수행하도록 제어하는 기능**입니다.
 
 ---
@@ -58,7 +58,7 @@ softjoint off
 ---
 
 > ✅ **정보**  
-> `softjoint on` 기능을 사용하기 전에 반드시 **softjoint_lim** 명령어를 사용하여  
+> `softjoint on` 기능을 사용하기 전에 반드시 **softj`softjoint_lim`용하여  
 > 다음 항목을 사전에 설정해야 합니다.
 >
 > - 유연하게 동작할 축 번호 (`j`)
@@ -76,7 +76,7 @@ softjoint off
 [__SOURCE](2-main/2.2-softjoint_lim.md)
 ## 2.2 softjoint_lim 
 
-**softjoint_lim** 명령어는 **softjoint on** 기능을 사용하기 전에  
+`softjoint_lim` 명령어는 **softjoint on** 기능을 사용하기 전에  
 SoftJoint 동작에 필요한 **파라미터 값을 사전에 설정**하기 위한 명령어입니다.
 
 사용자는 본 명령어를 통해 다음 항목을 설정해야 합니다.
@@ -107,7 +107,7 @@ softjoint_lim, j=<축번호>, sft=<부드러움 정도>, ang=<각도 범위>, th
 --- 
 
 > ✅ **정보**  
-> **softjoint_lim** 파라미터는 축 번호(`j`)와 부드러움 정도(`sft`)를 필수로 설정해야 합니다.  
+> `softjoint_lim` 파라미터는 축 번호(`j`)와 부드러움 정도(`sft`)를 필수로 설정해야 합니다.  
 > 각도 범위(`ang`)와 문턱값(`thr`)을 설정하지 않을 경우, 각도 제한은 적용되지 않으며  
 > 문턱값은 **0.0 Nm**로 자동 설정됩니다.
 
@@ -116,7 +116,7 @@ softjoint_lim, j=<축번호>, sft=<부드러움 정도>, ang=<각도 범위>, th
 # 3. 예시
 
 본 절에서는 SoftJoint 기능의 실제 사용 방법을 이해할 수 있도록  
-**softjoint_lim** 및 **softjoint** 명령어를 활용한 **대표적인 설정 및 프로그램 예제**를 제공합니다.
+`softjoint_lim` 및 *`softjoint`명령어를 활용한 **대표적인 설정 및 프로그램 예제**를 제공합니다.
 
 각 예제는 적용 축, 유연함 정도, 각도 제한, 문턱값 등 주요 파라미터 설정에 따른  
 SoftJoint 동작 특성을 확인하는 것을 목적으로 하며,  
