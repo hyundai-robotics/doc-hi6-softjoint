@@ -3,6 +3,11 @@
 # ${cont_model} 제어기 기능설명서 - softjoint 기능
 
 
+[__SOURCE](0-about-this-manual/precautions.md)
+# 사전 주의사항
+
+{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/ko/precautions.md" %}
+
 [__SOURCE](1-intro/README.md)
 # 1. 개요
 
@@ -116,7 +121,7 @@ softjoint_lim, j=<축번호>, sft=<부드러움 정도>, ang=<각도 범위>, th
 # 3. 예시
 
 본 절에서는 SoftJoint 기능의 실제 사용 방법을 이해할 수 있도록  
-`softjoint_lim` 및 *`softjoint`명령어를 활용한 **대표적인 설정 및 프로그램 예제**를 제공합니다.
+`softjoint_lim` 및 `softjoint` 명령어를 활용한 **대표적인 설정 및 프로그램 예제**를 제공합니다.
 
 각 예제는 적용 축, 유연함 정도, 각도 제한, 문턱값 등 주요 파라미터 설정에 따른  
 SoftJoint 동작 특성을 확인하는 것을 목적으로 하며,  
