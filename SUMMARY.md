@@ -1,6 +1,7 @@
 ﻿# Table of Contents
 
 * [${cont_model} Controller Function Description - SoftJoint Function](README.md)
+* [Precautions](0-about-this-manual/precautions.md)
 * [1. Overview](1-intro/README.md)
 * [2. Configuration](2-main/README.md)
   * [2.1 softjoint](2-main/2.1-softjoint.md)
