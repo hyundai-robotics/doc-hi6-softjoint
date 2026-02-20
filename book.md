@@ -141,6 +141,7 @@ This example shows how to enable SoftJoint for **Joint 3** with the following se
 
 ```plaintext
 softjoint_lim, j=3, sft=50, ang=30, thr=10
+```
 [__SOURCE](3-example/3.2-example.md)
 ## 3.2 Example: Configuration Allowing Compliance on Joints 2 and 3
 
@@ -173,3 +174,4 @@ S1   move P, spd=100mm/sec, accu=0, tool=0
 S2   move P, spd=250mm/sec, accu=0, tool=0
      softjoint off
      end
+```
