@@ -1,11 +1,11 @@
-﻿# Table of Contents
+﻿# Table of contents
 
-* [${cont_model} Controller Function Description - SoftJoint Function](README.md)
-* [Precautions](0-about-this-manual/precautions.md)
-* [1. Overview](1-intro/README.md)
-* [2. Configuration](2-main/README.md)
+* [${cont_model} 控制器功能描述 - SoftJoint 功能](README.md)
+* [注意事项](0-about-this-manual/precautions.md)
+* [1. 概述](1-intro/README.md)
+* [2. 命令](2-main/README.md)
   * [2.1 softjoint](2-main/2.1-softjoint.md)
   * [2.2 softjoint_lim](2-main/2.2-softjoint_lim.md)
-* [3. Command Examples](3-example/README.md)
-  * [3.1 Example - Configuration for Joint 3](3-example/3.1-example.md)
-  * [3.2 Example - Configuration for Joints 2 and 3](3-example/3.2-example.md)
+* [3. 示例](3-example/README.md)
+  * [3.1 示例：关节 3 的参数配置](3-example/3.1-example.md)
+  * [3.2 示例：允许关节 2 和 3 的柔顺配置](3-example/3.2-example.md)

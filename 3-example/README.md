@@ -1,14 +1,11 @@
-﻿# 3. Examples
+﻿# 3. 示例
 
-This section provides **representative configuration and program examples** using the  
-`softjoint_lim` and `softjoint` commands to help users understand how to use the SoftJoint function in practice.
+本节提供 **使用 `softjoint_lim` 和 `softjoint` 命令的代表性配置和程序示例**，帮助用户理解如何在实践中使用 SoftJoint 功能。
 
-Each example is designed to demonstrate the SoftJoint behavior under different parameter settings,  
-including the target joint, compliance level, angle limit, and threshold value.  
-The examples are structured with consideration for **practical application in real working environments**.
+每个示例旨在展示在不同参数设置下的 SoftJoint 行为，包括目标关节、柔顺级别、角度限制和阈值。示例结构考虑到 **在实际工作环境中的应用**。
 
-Through these examples, users can learn the following:
-- How to apply SoftJoint to a single joint
-- How to apply different parameters to multiple joints
-- Program flow when enabling and disabling the SoftJoint function
-- The recommended usage procedure, including the `delay` command
+通过这些示例，用户可以学习到以下内容：
+- 如何将 SoftJoint 应用于单个关节
+- 如何将不同的参数应用于多个关节
+- 启用和禁用 SoftJoint 功能时的程序流程
+- 推荐的使用程序，包括 `延迟 (delay)` 命令
