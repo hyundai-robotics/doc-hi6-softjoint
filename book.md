@@ -142,11 +142,11 @@ This example **activates only the joint 3 axis** and demonstrates a basic case w
 
 ---
 
-### Configuration Overview
+#### Configuration Overview
 For the third axis, **the softness, angle limit, and threshold are configured** based on a single-axis reference to clearly define the range of response to external forces.
 
 ---
-### Configuration Conditions
+#### Configuration Conditions
 
 * **Active joint**: Joint 3
 * **Compliance (`sft`)**: 50
@@ -154,7 +154,7 @@ For the third axis, **the softness, angle limit, and threshold are configured** 
 * **Threshold (`thr`)**: 10 Nm
 
 ---
-### Program Example
+#### Program Example
 
 ```plaintext
 softjoint_lim, j=3, sft=50, ang=30, thr=10
@@ -167,7 +167,7 @@ so that each joint responds to external forces with different characteristics.
 
 ---
 
-### Configuration Overview
+#### Configuration Overview
 For each joint axis, **softness, angle limits, and threshold values are configured** independently, allowing precise control of the external force response characteristics for each axis.
 
 ---
