@@ -22,14 +22,12 @@
 [__SOURCE](2-main/README.md)
 # 2. 명령어
 
-SoftJoint 기능은 두 개의 명령어(**soft`softjoint_lim`ftjoint**)를 통해 설정 및 제어됩니다.  
+SoftJoint 기능은 두 개의 명령어(`softjoint_lim`, `softjoint`)를 통해 설정 및 제어됩니다.  
 
 - `softjoint_lim` 명령어는 SoftJoint 동작에 필요한 **기본 파라미터를 사전에 정의**하는 역할을 합니다.
-- `softjoint` 명령어는, **`softjoint_lim` 설정된 파라미터를 기준으로 **SoftJoint 기능을 활성화 또는 비활성화**합니다.
+- `softjoint` 명령어는, `softjoint_lim` 설정된 파라미터를 기준으로 **SoftJoint 기능을 활성화 또는 비활성화**합니다.
 
-따라서 SoftJoint 기능을 사용하기 위해서는,  
-반드시 **`softjoint_lim`령어를 먼저 사용하여 적용할 축과 동작 특성을 설정한 후  
-**softjoint on** 명령어를 통해 기능을 활성화해야 합니다.
+따라서 SoftJoint 기능을 사용하기 위해서는, 반드시 `softjoint_lim` 명령어를 먼저 사용하여 적용할 축과 동작 특성을 설정한 후 `softjoint on` 명령어를 통해 기능을 활성화해야 합니다.
 
 `softjoint_lim` 명령어를 통해 사용자는 다음과 같은 항목을 정의할 수 있습니다.
 - softjoint가 적용될 축 번호
@@ -61,23 +59,25 @@ softjoint off
 | off | softjoint 기능 종료 |
 
 ---
-
-> ✅ **정보**  
-> `softjoint on` 기능을 사용하기 전에 반드시 **softj`softjoint_lim`용하여  
-> 다음 항목을 사전에 설정해야 합니다.
->
-> - 유연하게 동작할 축 번호 (`j`)
-> - 유연함 정도 (`sft`)
-> - 제한 각도 (`ang`)
-> - 문턱값 (`thr`)
->
-> 외력에 대한 로봇의 민감도를 향상시키기 위해,  
-> `softjoint on` 명령어 실행 전에 `delay` 명령어를 사용하여  
-> 로봇을 약 **1~2초간 정지**시키는 것을 권장합니다.
-
 <br>
 
-> ⚠️ 부가축은 해당 기능을 사용할 수 없습니다.  
+{% hint style="info" %}
+`softjoint on` 기능을 사용하기 전에 반드시 `softjoint_lim`에서 다음 항목을 사전에 설정해야 합니다.
+
+* 유연하게 동작할 축 번호 (`j`)
+* 유연함 정도 (`sft`)
+* 제한 각도 (`ang`)
+* 문턱값 (`thr`)
+
+외력에 대한 로봇의 민감도를 향상시키기 위해, `softjoint on` 명령어 실행 전에 `delay` 명령어를 사용하여 로봇을 약 **1~2초간 정지**시키는 것을 권장합니다.
+{% endhint %}
+<br>
+
+{% hint style="warning" %}
+부가축은 해당 기능을 사용할 수 없습니다. 
+{% endhint %}
+
+
 [__SOURCE](2-main/2.2-softjoint_lim.md)
 ## 2.2 softjoint_lim 
 
@@ -110,13 +110,17 @@ softjoint_lim, j=<축번호>, sft=<부드러움 정도>, ang=<각도 범위>, th
 | thr | 외력 감지를 위한 문턱값 | Nm |
 
 --- 
+<br>
 
-> ✅ **정보**  
-> `softjoint_lim` 파라미터는 축 번호(`j`)와 부드러움 정도(`sft`)를 필수로 설정해야 합니다.  
-> 각도 범위(`ang`)와 문턱값(`thr`)을 설정하지 않을 경우, 각도 제한은 적용되지 않으며  
-> 문턱값은 **0.0 Nm**로 자동 설정됩니다.
+{% hint style="info" %}
 
-> ⚠️ 부가축은 해당 기능을 사용할 수 없습니다.  
+* `softjoint_lim` 파라미터는 축 번호(`j`)와 부드러움 정도(`sft`)를 필수로 설정해야 합니다.  
+* 각도 범위(`ang`)와 문턱값(`thr`)을 설정하지 않을 경우, 각도 제한은 적용되지 않으며 문턱값은 **0.0 Nm**로 자동 설정됩니다.
+{% endhint %}
+
+{% hint style="warning" %}
+부가축은 해당 기능을 사용할 수 없습니다.  
+{% endhint %}
 [__SOURCE](3-example/README.md)
 # 3. 예시
 
@@ -149,18 +153,10 @@ SoftJoint 동작 특성을 확인하는 것을 목적으로 하며,
 
 ### 설정 조건
 
-- **활성 축**  
-  - 3번 축
-
-- **부드러움 (sft)**  
-  - 50 (중간 수준의 컴플라이언스)
-
-- **각도 제한 (ang)**  
-  - -30° ~ +30°
-
-- **문턱값 (thr)**  
-  - 10 Nm
-
+* **활성 축** : 3번 축
+* **부드러움 (sft)** : 50 (중간 수준의 컴플라이언스)
+* **각도 제한 (ang)** : -30° ~ +30°
+* **문턱값 (thr)** : 10 Nm
 ---
 
 ### 프로그램 예제
