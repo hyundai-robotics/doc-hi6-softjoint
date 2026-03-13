@@ -10,10 +10,10 @@
 [__SOURCE](1-intro/README.md)
 # 1. Overview
 
-The Soft Joint function allows the robot to respond flexibly to external forces in the joint coordinate frame, based on the environment configured by the user.
-To ensure accurate operation of this function, information regarding the tool mounted on the robot or any additional payload must be configured correctly.
+**The Soft Joint function** allows the robot to respond flexibly to external forces in the **joint coordinate frame**, based on the environment configured by the user.
+To ensure accurate operation of this function, information regarding the **tool mounted on the robot** or **any additional payload** must be configured correctly.
 
-Since this function operates entirely through software, it can be used without any additional hardware, such as force/torque sensors.
+Since this function operates entirely through **software**, it can be **used without any additional hardware, such as force/torque sensors.**
 
 ---
 
@@ -36,7 +36,7 @@ Using the `softjoint_lim` command, the user can define the following items:
 [__SOURCE](2-main/2.1-softjoint.md)
 ## 2.1 softjoint
 
-The SoftJoint function allows the robot to respond compliantly to external forces in the joint coordinate frame without the use of sensors.
+`SoftJoint` function allows the robot to **respond compliantly to external forces** in the **joint coordinate frame** without the use of sensors.
 
 <br>
 
@@ -59,33 +59,34 @@ softjoint off
 ---
 <br>
 
-> ✅ **Information**  
-> Before using the `softjoint on` command, you must configure the following parameters in advance using the `softjoint_lim` command:
->
-> - Joint index to be compliant (`j`)
-> - Compliance level (`sft`)
-> - Limit angle (`ang`)
-> - Threshold value (`thr`)
->
-> To improve the robot's sensitivity to external forces,  
-> it is recommended to stop the robot for approximately **1-2 seconds**  
-> using the `delay` command before executing the `softjoint on` command.
+{% hint style="info" %}
+Before using the `softjoint on` command, you must configure the following parameters in advance using the `softjoint_lim` command:
 
+* Joint index to be compliant (`j`)
+* Compliance level (`sft`)
+* Limit angle (`ang`)
+* Threshold value (`thr`)
+
+To improve the robot's sensitivity to external forces, it is recommended to stop the robot for approximately **1-2 seconds** using the `delay` command before executing the `softjoint on` command.
+{% endhint %}
 <br>
 
-> ⚠️ **Warning**  
-> This function is **not supported for auxiliary axes**. 
+{% hint style="warning" %}
+
+This function is **not supported for auxiliary axes**. 
+{% endhint %}
 [__SOURCE](2-main/2.2-softjoint_lim.md)
 ## 2.2 softjoint_lim 
 
-The `softjoint_lim` command is used to **preconfigure the required parameters** for SoftJoint operation before enabling the `softjoint on` function.  
+The `softjoint_lim` command is used to **preconfigure the required parameters** for SoftJoint operation before enabling the **softjoint on** function.  
 Using this command, the user must set the following items in advance:
 
-- Joint index to which SoftJoint will be applied
-- Compliance level of the joint
-- Allowable joint angle range
-- Threshold value for external force detection
+* Joint index to which SoftJoint will be applied
+* Compliance level of the joint
+* Allowable joint angle range
+* Threshold value for external force detection
 
+---
 <br>
 
 ### Syntax
@@ -107,13 +108,17 @@ softjoint_lim, j=<joint>, sft=<softness>, ang=<angle>, thr=<threshold>
 ---
 <br>
 
-> ✅ **Information**  
-> For the `softjoint_lim` command, the joint index (`j`) and the compliance level (`sft`) **must be specified**.  
-> If the angle range (`ang`) and threshold value (`thr`) are not provided,  
-> the angle limit will not be applied and the threshold value will be automatically set to **0.0 Nm**.
+{% hint style="info" %}
 
-> ⚠️ **Warning**  
-> This function is **not supported for auxiliary axes**.
+* For the `softjoint_lim` command, the joint index (`j`) and the compliance level (`sft`) **must be specified**.  
+* If the angle range (`ang`) and threshold value (`thr`) are not provided,  
+* the angle limit will not be applied and the threshold value will be automatically set to **0.0 Nm**.
+{% endhint %}
+
+{% hint style="warning" %}
+
+This function is **not supported for auxiliary axes**.
+{% endhint %}
 [__SOURCE](3-example/README.md)
 # 3. Examples
 
@@ -133,11 +138,23 @@ Through these examples, users can learn the following:
 [__SOURCE](3-example/3.1-example.md)
 ## 3.1 Example: Parameter Configuration for Joint 3
 
-This example shows how to enable SoftJoint for **Joint 3** with the following settings:
-- **Active joint**: Joint 3
-- **Compliance (`sft`)**: 50
-- **Angle limit (`ang`)**: ±30 deg
-- **Threshold (`thr`)**: 10 Nm
+This example **activates only the joint 3 axis** and demonstrates a basic case where **the axis responds to external forces according to the specified compliance characteristics.**
+
+---
+
+### Configuration Overview
+For the third axis, **the softness, angle limit, and threshold are configured** based on a single-axis reference to clearly define the range of response to external forces.
+
+---
+### Configuration Conditions
+
+* **Active joint**: Joint 3
+* **Compliance (`sft`)**: 50
+* **Angle limit (`ang`)**: ±30 deg
+* **Threshold (`thr`)**: 10 Nm
+
+---
+### Program Example
 
 ```plaintext
 softjoint_lim, j=3, sft=50, ang=30, thr=10
@@ -148,19 +165,28 @@ softjoint_lim, j=3, sft=50, ang=30, thr=10
 This example demonstrates how to apply different SoftJoint parameters to **Joint 2** and **Joint 3**,  
 so that each joint responds to external forces with different characteristics.
 
+---
+
+### Configuration Overview
+For each joint axis, **softness, angle limits, and threshold values are configured** independently, allowing precise control of the external force response characteristics for each axis.
+
+---
+
 #### Configuration Conditions
 
-- **Compliance (`sft`)**
-  - Joint 2: 30
-  - Joint 3: 80
+* **Compliance (`sft`)**
+  * Joint 2: 30 (relatively stiffer response)
+  * Joint 3: 80 (more flexible response)
 
-- **Angle Limit (`ang`)**
-  - Joint 2: -50° to +50°
-  - Joint 3: No limit
+* **Angle Limit (`ang`)**
+  * Joint 2: -50° to +50°
+  * Joint 3: No limit
 
-- **Threshold (`thr`)**
-  - Joint 2: 3 Nm
-  - Joint 3: 5 Nm
+* **Threshold (`thr`)**
+  * Joint 2: 3 Nm
+  * Joint 3: 5 Nm
+
+---
 
 #### Program Example
 
