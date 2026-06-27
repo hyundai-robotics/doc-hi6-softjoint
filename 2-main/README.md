@@ -1,15 +1,15 @@
-﻿# 2. Commands
+# 2. 命令
 
-The SoftJoint function is configured and controlled using two commands:  
-`softjoint_lim` and `softjoint`.
+SoftJoint 功能是通过两个命令配置和控制的:  
+`softjoint_lim` 和 `softjoint`。
 
-- The `softjoint_lim` command is used to **predefine the base parameters** required for SoftJoint operation.
-- The `softjoint` command **enables or disables** the SoftJoint function based on the parameters configured by `softjoint_lim`.
+- `softjoint_lim` 命令用于 **预定义 SoftJoint 操作所需的基本参数**。
+- `softjoint` 命令 **根据 `softjoint_lim` 配置的参数启用或禁用** SoftJoint 功能。
 
-Therefore, to use the SoftJoint function, the user must first configure the target joint and its motion characteristics using the `softjoint_lim` command, and then enable the function by executing the `softjoint on` command.
+因此，要使用 SoftJoint 功能，用户必须首先使用 `softjoint_lim` 命令配置目标关节及其运动特性，然后通过执行 `softjoint on` 命令启用该功能。
 
-Using the `softjoint_lim` command, the user can define the following items:
-- Joint index to which SoftJoint will be applied
-- Level of compliant response to external forces
-- Allowable joint angle range
-- Threshold value for external force detection
+使用 `softjoint_lim` 命令，用户可以定义以下项:
+- 将应用 SoftJoint 的关节索引
+- 对外部力量的顺应响应级别
+- 允许的关节角度范围
+- 外部力量检测的阈值

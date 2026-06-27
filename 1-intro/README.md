@@ -1,8 +1,6 @@
-﻿# 1. Overview
+﻿# 1. 概述
 
-**The Soft Joint function** allows the robot to respond flexibly to external forces in the **joint coordinate frame**, based on the environment configured by the user.
-To ensure accurate operation of this function, information regarding the **tool mounted on the robot** or **any additional payload** must be configured correctly.
+**软关节功能**允许机器人根据用户配置的环境，在**关节坐标系**中灵活地响应外部力量。
+为了确保此功能的准确操作，必须正确配置关于**安装在机器人上的工具**或**任何额外负载**的信息。
 
-Since this function operates entirely through **software**, it can be **used without any additional hardware, such as force/torque sensors.**
-
----
+由于此功能完全通过**软件**操作，因此可以**在没有任何额外硬件（如力/扭矩传感器）的情况下使用。**
